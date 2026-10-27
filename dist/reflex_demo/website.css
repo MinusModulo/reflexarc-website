@@ -1,0 +1,2 @@
+/* Fit the original instruction inside the website’s narrow embedded viewport. */
+@media(max-width:760px){.hint{width:max-content;max-width:calc(100% - 28px);white-space:normal;line-height:1.45;border-radius:14px}.hint .pulse{flex-shrink:0}}

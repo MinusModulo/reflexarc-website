@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ReflexArc Interactive</title>
+  <meta name="description" content="Strike a simulated Unitree G1 anywhere on its upper body and watch the whole-body reflex policy react, live in your browser." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307090d'/%3E%3Cpath d='M18 3 7 18h7l-2 11 11-15h-7z' fill='%23ffb02e'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./build/index-JciCZjCD.js"></script>
+  <link rel="stylesheet" crossorigin href="./build/index-DG1rR3cV.css">
+  <link rel="stylesheet" href="./website.css">
+</head>
+<body>
+  <div id="app">
+    <canvas id="view"></canvas>
+    <div id="vignette"></div>
+    <div id="dissolve"></div>
+
+    <header class="brand">
+      <div class="mark"><span class="bolt">⚡</span>ReflexArc</div>
+      <div class="sub">Whole-body tactile reflex · live MuJoCo in your browser</div>
+    </header>
+
+    <div class="toolbar glass" role="toolbar" aria-label="Simulation controls">
+      <button id="btn-pause" title="Pause (Space)" aria-label="Pause">
+        <svg viewBox="0 0 24 24"><path class="i-pause" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/><path class="i-play" d="M8 5.5v13l10.5-6.5z"/></svg>
+      </button>
+      <button id="btn-follow" class="toggle on" title="Camera follows robot (F)" aria-label="Camera follow" aria-pressed="true">
+        <svg viewBox="0 0 24 24"><path d="M4 9V5h4M20 9V5h-4M4 15v4h4M20 15v4h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="2.6" fill="currentColor"/></svg>
+      </button>
+      <button id="btn-reset" title="Restart motion (R)" aria-label="Restart motion">
+        <svg viewBox="0 0 24 24"><path d="M5.5 12a6.5 6.5 0 1 0 2-4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 4.5v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <section class="scope glass" aria-label="Reflex signal">
+      <div class="scope-head">
+        <span class="label">Reflex Δq</span>
+        <span id="scope-part" class="part">—</span>
+      </div>
+      <div class="scope-solve" id="scope-solve">ReflexAPI · running in your browser</div>
+      <canvas id="scope"></canvas>
+      <div class="scope-foot">
+        <span><i class="dot hold"></i>hold 1.0 s</span>
+        <span><i class="dot fade"></i>fade 0.5 s</span>
+        <span id="scope-retreat"><i class="dot retreat"></i>retreat 2 s</span>
+      </div>
+    </section>
+
+    <nav class="motions glass" id="motions" aria-label="Motion"></nav>
+
+    <div class="hint loading" id="hint"><span class="pulse"></span><span id="hint-text">Loading the reflex solver…</span></div>
+
+    <div class="loader" id="loader">
+      <div class="loader-mark"><span class="bolt">⚡</span>ReflexArc</div>
+      <div class="loader-bar"><i id="loader-fill"></i></div>
+      <div class="loader-text" id="loader-text">Loading physics…</div>
+    </div>
+  </div>
+</body>
+</html>

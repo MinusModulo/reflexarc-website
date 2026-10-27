@@ -1,0 +1,27 @@
+{
+ "id": "kungfu",
+ "label": "Kung Fu",
+ "source": "kungfu1",
+ "frames": 1029,
+ "fps": 50.0,
+ "track_width": 75,
+ "policy_layers": [
+  [
+   512,
+   193
+  ],
+  [
+   256,
+   512
+  ],
+  [
+   128,
+   256
+  ],
+  [
+   29,
+   128
+  ]
+ ],
+ "loops": false
+}

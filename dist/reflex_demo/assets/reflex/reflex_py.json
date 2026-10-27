@@ -1,0 +1,29 @@
+{
+ "training_commit": "bf07ab7d0d33baf4f489ef9e9af32acda135e4ad",
+ "files": {
+  "reflex_api/__init__.py": "ab3000060f8c6478a6e0d963af7191dd30c906c9c8cb726114e9363bf5e5889b",
+  "reflex_api/__main__.py": "d23b0e554923fd6910d30c3d00acead688a3eba9f10ddf9b7a578238c135f4dd",
+  "reflex_api/assets/g1_reflex.xml": "ada140914ab99cd544b43b6cbff5a15f3f1310f4402b550841485cd87a731097",
+  "reflex_api/call_reflex.py": "c531a6c58e757cdb69ad250ee71ff50df2a6499e3b16a6a20b88a02469311436",
+  "reflex_api/collision.py": "a448bcf34030f69e003718d0fe0ab5027d79660687398a2b1171def0309a14bf",
+  "reflex_api/collision_pair_allowlist.py": "6d282a9c41538ba0ca5da5cc0e5e61817535891d7e413f62be9c4367d32dae42",
+  "reflex_api/config.py": "b05e7de96ca1141f6e80a4c76d7116c93bd7fc97393400b0f4bfdff74d8e6cfe",
+  "reflex_api/core.py": "40a3619cdf029b82b1c8be2f2964690fe8918094157e371dc4062d175c162a81",
+  "reflex_api/hard_support.py": "6d9980abdd265ea06c0f6894f68f712cc9b7bcc3ac55ef232754f8e82c08e978",
+  "reflex_api/model.py": "9de2201e146a362b32fbdff3f9e0ddd1d7cbc77d2cb8a34f4272d2eabae353ca",
+  "reflex_api/profiles.py": "f4550b49d80886e08be0fc1f1f2212d1aa7e61d73780130b8900c6873169e5a4",
+  "reflex_api/retreat_cone.py": "3ae474338b2487e1e0e9cfd2921a2728b09243ef49a9bff33bd2ee341fea1cd1",
+  "reflex_api/self_collision.py": "a1bbb272edb1c8cb3c93d6e66582c475344cb932b81069b5baeb805ac91ab931",
+  "reflex_api/stance_points.py": "b236bb460e0d87dc4aecb262a522052a645bc000c2de709bf400afa0bdfb23c2",
+  "reflex_api/support_region.py": "849574b0dc11882d06550a37c35a7d15d85d602e75b5bdb8fb66160c98195e3d",
+  "reflex_api/velocity_conditioning.py": "728c2e01ae8741257c8659de3d270c098759b720a0c5d97b4bd7631cad719591",
+  "reflex_api/weighted_com_target_optimizer.py": "1fee4c8481558027eebaac22e29fec73c7813fb0c7932f03d429f0f89fa5b41f",
+  "mujoco/__init__.py": "5108485baafa72f05fdf55ebbb1eb1860dae693825056b9c98ec30cf5af1ea8e",
+  "proxsuite/__init__.py": "c648349557d73cee336c0b448522bfdf11bb9aef71ada56bbc2a909b75975a19",
+  "proxsuite/proxqp/__init__.py": "b5b0a9d35bdb2788b7c40864fbc14918e05cd99977a1e14a7d47a125d0405ff3",
+  "proxsuite/proxqp/dense.py": "dea93174c0d5ae952b96494e72d7d54bede73549f4ff02c61a2af98b25ac7651",
+  "reflex_web.py": "7159af9149ea08c5614d017e46c5d98bc3f59326a92264e767168a47685f1505",
+  "scipy/__init__.py": "e183d9983a522b898e52d2d479a43cd0ccf89cbfbc587388c1c5781005afdf9b",
+  "scipy/optimize/__init__.py": "d0cfa380a199bf0ae93ebcdd0cc1671044f0e737ccfb57e2a03c271d8bae25ce"
+ }
+}

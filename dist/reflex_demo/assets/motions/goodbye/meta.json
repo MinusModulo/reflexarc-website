@@ -1,0 +1,27 @@
+{
+ "id": "goodbye",
+ "label": "Goodbye",
+ "source": "goodbye",
+ "frames": 1561,
+ "fps": 50.0,
+ "track_width": 75,
+ "policy_layers": [
+  [
+   512,
+   193
+  ],
+  [
+   256,
+   512
+  ],
+  [
+   128,
+   256
+  ],
+  [
+   29,
+   128
+  ]
+ ],
+ "loops": false
+}
