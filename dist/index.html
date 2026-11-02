@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="research-document">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ReflexArc</title>
@@ -8,10 +8,11 @@
   <meta property="og:title" content="ReflexArc">
   <meta property="og:description" content="Touch-triggered action. Whole-body coordination. A bottom-up pathway for humanoid control.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://reflexarc.candyhorse6.chatgpt.site/">
-  <meta property="og:image" content="https://reflexarc.candyhorse6.chatgpt.site/assets/hero.jpg">
+  <meta property="og:url" content="https://minusmodulo.github.io/reflexarc-website/">
+  <meta property="og:image" content="https://minusmodulo.github.io/reflexarc-website/assets/hero.jpg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/GoogleSansFlex-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/GoogleSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="vendor/katex/katex.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="vendor/katex/katex.min.js" defer></script>
@@ -19,41 +20,50 @@
 </head>
 <body>
   <button class="skip-link" type="button" data-scroll="main">Skip to content</button>
-  <header class="site-header">
-    <button class="brand" type="button" data-scroll="main" aria-label="ReflexArc home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 25V15A11 11 0 0 1 15 4h10M11 28V16a5 5 0 0 1 5-5h12M18 28V18h10"/></svg>ReflexArc<span class="brand-dot">.</span></button>
-    <nav aria-label="Main navigation"><button type="button" data-scroll="in-action">In action</button><button type="button" data-scroll="approach">Approach</button><button type="button" data-scroll="results">Results</button></nav>
-    <div class="nav-resources" aria-label="Paper and code">
-      <span class="nav-resource nav-arxiv" data-resource="arxiv" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg><span>arXiv<small>Coming soon</small></span></span>
-      <span class="nav-resource nav-github" data-resource="github" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7 3 12l5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>GitHub<small>Coming soon</small></span></span>
-    </div>
-  </header>
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <video id="hero-video" class="hero-film" muted loop playsinline autoplay preload="metadata" poster="assets/hero.jpg" aria-label="ReflexArc humanoid reacting to contact while walking"><source src="assets/hero.mp4" type="video/mp4"></video>
       <div class="hero-shade"></div>
-      <div class="hero-copy"><p class="eyebrow light"><span class="signal-dot"></span> TOUCH-TRIGGERED. WHOLE-BODY.</p>
-        <h1 id="hero-title">ReflexArc</h1>
-        <p class="hero-description">Bottom-Up Integration of Instantaneous Tactile Reflexes<br class="desktop-break"> into Whole-Body Humanoid Control</p>
-        <button class="button orange" data-film="demo" type="button"><span class="play-triangle" aria-hidden="true">▶</span> Watch the film <span class="button-meta">02:00</span></button>
-        <button class="hero-demo" type="button" data-scroll="playground"><span class="demo-orbit" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m16 5 10 6v10l-10 6-10-6V11zM6 11l10 6 10-6M16 17v10"/></svg></span><span class="hero-demo-label"><strong>Interactive Demo</strong><small>EXPLORE THE POLICY</small></span><span class="demo-cta-arrow" aria-hidden="true">↓</span></button>
-      </div>
-      <div class="hero-bottom"><span>REFLEXARC / ASCENDING REFLEX CONTROL</span><button id="hero-toggle" type="button" aria-label="Pause background video">Ⅱ <span>Pause</span></button></div>
-      <button class="hero-scroll" type="button" data-scroll="overview" aria-label="Discover ReflexArc">↓</button>
-    </section>
-
-    <section class="intro section-shell" id="overview" aria-labelledby="intro-title">
-      <div class="section-kicker"><span>01 / THE IDEA</span><span>FROM WITHDRAWAL TO RETREAT</span></div>
-      <div class="intro-grid"><h2 id="intro-title">Touch.<br>React.<br><span class="orange-text">Adapt.</span></h2>
-        <div class="intro-copy"><p class="large-copy">Withdraw in milliseconds.<br>Adapt over the seconds that follow.</p>
-          <p>ReflexArc carries tactile contact to the motors within 10 ms. Ascending Reflex Control (<span class="arc-word">ARC</span>) then turns local withdrawal into a sustained, whole-body retreat away from the collision. A contact-conditioned task reward guides that displacement; an AMP human motion prior shapes natural steps as the policy departs from its tracking reference.</p>
-          <div class="resource-links"><button type="button" id="paper-open">Read the paper <span>+</span></button></div>
+      <div class="hero-copy">
+        <h1 id="hero-title"><span class="hero-title-name">ReflexArc</span><span class="hero-title-subtitle"><span>Bottom-Up Integration of Instantaneous Tactile Reflexes</span> <span>into <span class="keep-together">Whole-Body</span> Humanoid Control</span></span></h1>
+        <div class="hero-byline" aria-label="Authors and affiliations">
+          <p id="hero-authors" class="hero-authors"></p>
+          <p id="hero-affiliations" class="hero-affiliations"></p>
+          <p class="hero-author-notes"><span>* Equal contribution</span><span>† Corresponding author</span></p>
+        </div>
+        <div class="hero-actions" aria-label="Explore ReflexArc">
+          <div class="hero-primary-actions">
+            <button class="hero-action hero-action-mint" data-film="demo" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7z"/></svg><span>Watch video</span></button>
+            <button class="hero-action hero-action-mint" type="button" data-scroll="playground"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg><span>Interactive demo</span></button>
+          </div>
+          <div class="hero-resource-actions" aria-label="Paper and code">
+            <span class="hero-action hero-resource" data-resource="arxiv" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg><span>Paper<small>Coming soon</small></span></span>
+            <span class="hero-action hero-resource" data-resource="github" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7 3 12l5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><span>Code<small>Coming soon</small></span></span>
+          </div>
         </div>
       </div>
-      <div class="spec-strip"><div><strong>&lt;10<span>ms</span></strong><p>Contact-to-motor pathway</p></div><div><strong>300<span>Hz</span></strong><p>Distributed tactile sensing</p></div><div><strong>29<span>DoF</span></strong><p>Coordinated whole-body response</p></div><div class="spec-note">UNITREE G1<br><span>Hardware experiments</span><span class="mini-arrow" aria-hidden="true">↗</span></div></div>
+      <div class="hero-bottom"><button id="hero-toggle" type="button" aria-label="Pause background video">Ⅱ <span>Pause</span></button></div>
+    </section>
+
+    <section class="abstract-section" id="overview" aria-labelledby="intro-title">
+      <div class="section-shell">
+        <header class="abstract-heading"><span class="abstract-number" aria-hidden="true">01</span><h2 id="intro-title">Abstract</h2></header>
+        <div class="abstract-copy">
+          <p>Humanoid robots in cluttered environments must react to contact before the first impact peak, which arrives within tens of milliseconds. A <span class="keep-together">50 Hz</span> learned policy needs a full inference step to react, so the reflex must bypass it and act directly at the motors. Yet the robot still relies on the policy for balance and its task, and both act on the same joints. We propose <strong><span class="arc-word">ARC</span> (Ascending Reflex Control)</strong>, in which an instantaneous tactile reflex and a learned whole-body policy remain simultaneously in control.</p>
+          <p><span class="arc-word">ARC</span> consists of two components: an <strong>instantaneous reflex pathway</strong> and <strong>bottom-up reflex integration</strong>. The reflex pathway detects hazardous contacts from full-body tactile sensing, solves a whole-body withdrawal pose, and delivers it directly to the motors within <span class="keep-together">10 ms</span>. Bottom-up reflex integration combines reflex-in-the-loop policy learning, reflex-transparent policy alignment, and reflex-informed policy adaptation to sustain the withdrawal, maintain balance, and complete longer-horizon recovery.</p>
+          <p>We deploy <span class="arc-word">ARC</span> on a Unitree G1 and evaluate three categories of hazardous contact. Compared with an otherwise identical reflex delayed by <span class="keep-together">20 ms</span>, <span class="arc-word">ARC</span> reduces the first force peak by <strong>34.1%</strong> and reduces the contact impulse from <span class="keep-together">0.2632 N·s</span> to <span class="keep-together">0.1225 N·s</span> (a 2.15× ratio). We further demonstrate protected motion tracking, teleoperation, and vision-free obstacle traversal guided by foot tactile sensing.</p>
+        </div>
+        <div class="abstract-results" aria-label="Key results from the paper">
+          <div><strong>&lt;10<span>ms</span></strong><p>Touch to motor response</p></div>
+          <div><strong>34.1<span>%</span></strong><p>Lower first force peak</p></div>
+          <div><strong>53.5<span>%</span></strong><p>Lower contact impulse</p></div>
+        </div>
+        <div class="abstract-footer"><button type="button" id="paper-open">Read the paper <span aria-hidden="true">↗</span></button></div>
+      </div>
     </section>
 
     <section class="action-section dark-section" id="in-action" aria-labelledby="action-title">
-      <div class="section-shell"><div class="section-kicker"><span>02 / IN ACTION</span><span>HANDS · ARMS · TORSO · KNEE</span></div>
+      <div class="section-shell"><div class="section-kicker"><span>02 / IN ACTION</span><span>HANDS · ARMS · TORSO · KNEE · FEET</span></div>
         <div class="section-heading"><h2 id="action-title">Whole-body reflexes.<br>Across tasks.</h2><p>From a touch on the wrist to a step over an obstacle.<br>Explore ReflexArc on hardware.</p></div>
         <div class="demo-tabs" role="tablist" aria-label="Hardware demonstrations">
           <button id="tab-wholebody" role="tab" aria-selected="true" aria-controls="demo-panel" data-demo="wholebody" tabindex="0"><span>01</span> Whole-body reflex</button>
@@ -115,7 +125,7 @@
       </div>
       <div class="arc-cards" aria-label="Explore the three ARC designs">
         <button class="arc-card" type="button" id="arc-trigger-learning" data-arc="learning" aria-expanded="true" aria-controls="arc-learning" aria-labelledby="learning-card-title" aria-describedby="learning-card-promise"><span class="arc-number">01</span><h3 id="learning-card-title"><span class="card-mechanism">Reflex-in-the-Loop</span> <span class="card-accent">Policy Learning</span></h3><p class="card-promise" id="learning-card-promise">Balance through the reflex.</p><span class="arc-expand" aria-hidden="true">−</span></button>
-        <button class="arc-card" type="button" id="arc-trigger-alignment" data-arc="alignment" aria-expanded="false" aria-controls="arc-alignment" aria-labelledby="alignment-card-title" aria-describedby="alignment-card-promise"><span class="arc-number">02</span><h3 id="alignment-card-title"><span class="card-mechanism">Reflex-Transparent</span> <span class="card-accent">Policy Alignment</span></h3><p class="card-promise" id="alignment-card-promise">Let policy and reflex pull together.</p><span class="arc-expand" aria-hidden="true">+</span></button>
+        <button class="arc-card" type="button" id="arc-trigger-alignment" data-arc="alignment" aria-expanded="false" aria-controls="arc-alignment" aria-labelledby="alignment-card-title" aria-describedby="alignment-card-promise"><span class="arc-number">02</span><h3 id="alignment-card-title"><span class="card-mechanism">Reflex-Transparent</span> <span class="card-accent">Policy Alignment</span></h3><p class="card-promise" id="alignment-card-promise">Make the reflex invisible to the policy.</p><span class="arc-expand" aria-hidden="true">+</span></button>
         <button class="arc-card" type="button" id="arc-trigger-adaptation" data-arc="adaptation" aria-expanded="false" aria-controls="arc-adaptation" aria-labelledby="adaptation-card-title" aria-describedby="adaptation-card-promise"><span class="arc-number">03</span><h3 id="adaptation-card-title"><span class="card-mechanism">Reflex-Informed</span> <span class="card-accent">Policy Adaptation</span></h3><p class="card-promise" id="adaptation-card-promise">Turn withdrawal into purposeful retreat.</p><span class="arc-expand" aria-hidden="true">+</span></button>
       </div>
       <div class="arc-panels">
@@ -132,7 +142,7 @@
               <figure class="distribution-figure"><img src="assets/policy-alignment.jpg" alt="Two Mappings versus One Mapping: reflex states lie outside the nominal tracking distribution; subtracting the reflex offset aligns policy inputs, and adding it back preserves withdrawal at execution. RL and DAgger align the policy outputs." width="1836" height="1030" loading="lazy"></figure>
               <div class="math-display" data-tex="\begin{aligned}\tilde{s}&=s-\Delta q\\a_{\mathrm{exec}}&=\pi(\tilde{s})+\Delta q\\r_{\mathrm{tp}}&=-\left\|\pi(\tilde{s})-\pi(s^-)\right\|^2\end{aligned}"></div>
             </div>
-            <p>The shift acts on the joint-position component of <span data-tex="s"></span>; <span data-tex="s^-"></span> is the counterfactual state reached with the reflex absent. Together, the interface shift and counterfactual supervision preserve the policy’s stabilizing behavior as the reflex carries the body away from contact.</p>
+            <p>The shift acts on the joint-position component of <span data-tex="s"></span>; <span data-tex="s^-"></span> is the counterfactual state reached with the reflex absent. Together, they place the policy in a world where the reflex never occurred, while the reflex keeps full authority in the real one.</p>
           </div>
         </section>
         <section class="arc-panel" id="arc-adaptation" aria-labelledby="arc-trigger-adaptation" hidden>
@@ -145,17 +155,17 @@
     </div></section>
 
 
-    <section class="study-section section-shell" aria-labelledby="study-title"><div class="section-kicker"><span>05 / TAKE A CLOSER LOOK</span><span>COMPARISONS & ABLATIONS</span></div><div class="section-heading"><h2 id="study-title">See what each<br>part brings.</h2><p>Hardware comparisons reveal the roles of reflex timing, policy alignment, and behavioral adaptation.</p></div>
+    <section class="study-section section-shell" aria-labelledby="study-title"><div class="section-kicker"><span>05 / TAKE A CLOSER LOOK</span><span>COMPARISONS & ABLATIONS</span></div><div class="section-heading"><h2 id="study-title">See what each<br>part brings.</h2><p>Hardware comparisons reveal the roles of reflex timing and behavioral adaptation.</p></div>
       <div class="study-grid"><article><button class="film-card" data-film="comparison" aria-label="Play hardware comparison"><img src="assets/comparison.jpg" alt="ARC, reflex-free control, and top-down reflex compared on hardware" loading="lazy"><span class="round-play" aria-hidden="true">▶</span></button><div class="study-caption"><span>01 / COMPARISON</span><h3>Contact changes the movement.</h3><p>Watch <span class="arc-word">ARC</span>, reflex-free control, and a top-down reflex respond to obstacles.</p></div></article><article><button class="film-card" data-film="ablation" aria-label="Play component ablation video"><img src="assets/ablation.jpg" alt="ARC component ablations and narrow corridor hardware test" loading="lazy"><span class="round-play" aria-hidden="true">▶</span></button><div class="study-caption"><span>02 / ABLATION</span><h3>From withdrawal to recovery.</h3><p>Explore the contribution of the reflex, adaptation, and human motion prior.</p></div></article></div>
       <details class="ablation-details"><summary><span>Full ablation metrics <small>Paper · Table I</small></span><b aria-hidden="true">+</b></summary>
         <div class="ablation-content"><p class="table-intro">From local withdrawal through contact to global recovery. Five variants isolate the roles of training, alignment, adaptation, and the human motion prior.</p><div class="table-scroll" role="region" aria-label="Ablation metrics from Table I. Scroll horizontally to see all columns." tabindex="0"><table class="ablation-table"><caption>Table I · Ablation of the three <span class="arc-word">ARC</span> designs</caption><thead><tr class="table-groups"><th rowspan="2" scope="col">Method</th><th colspan="3" scope="colgroup">Local withdrawal</th><th colspan="3" scope="colgroup">Contact</th><th colspan="5" scope="colgroup">Global recovery</th></tr><tr>
         <th scope="col"><span data-tex="v_{100\mathrm{ms}}"></span><small>m/s ↑</small></th><th scope="col">Hold<small>cm ↑</small></th><th scope="col"><span data-tex="C"></span><small>%</small></th><th scope="col">Surv.<small>% ↑</small></th><th scope="col"><span data-tex="J_{100\mathrm{ms}}"></span><small>N·s ↓</small></th><th scope="col">Rehit<small>% ↓</small></th><th scope="col"><span data-tex="D_{3\mathrm{s}}"></span><small>m</small></th><th scope="col"><span data-tex="v_{0.2\text{–}1\mathrm{s}}"></span><small>m/s ↑</small></th><th scope="col">Dir. err.<small>° ↓</small></th><th scope="col"><span data-tex="\geq 0.5\,\mathrm{m}"></span><small>% ↑</small></th><th scope="col"><span data-tex="\geq 1.5\,\mathrm{m}"></span><small>% ↑</small></th></tr></thead><tbody>
         <tr><th scope="row">w/o reflex-in-the-loop</th><td>0.725</td><td>5.65</td><td>25.0</td><td>82.0</td><td>4.34</td><td>90.9</td><td>−0.01</td><td>0.026</td><td>88.8</td><td>41.1</td><td>8.9</td></tr>
-        <tr><th scope="row">w/o transparency</th><td>0.900</td><td>6.74</td><td>29.7</td><td>99.2</td><td>4.22</td><td>58.3</td><td>1.67</td><td>0.475</td><td>12.0</td><td>100.0</td><td>57.3</td></tr>
+        <tr><th scope="row">w/o transparency</th><td>0.900</td><td>6.74</td><td>29.7</td><td class="best">99.2</td><td>4.22</td><td class="best">58.3</td><td>1.67</td><td class="best">0.475</td><td>12.0</td><td class="best">100.0</td><td>57.3</td></tr>
         <tr><th scope="row">w/o adaptation</th><td>0.919</td><td>7.03</td><td>−8.7</td><td>77.3</td><td>3.63</td><td>88.0</td><td>−0.01</td><td>0.021</td><td>88.9</td><td>42.2</td><td>6.8</td></tr>
         <tr><th scope="row">Explicit reference</th><td>0.965</td><td>10.89</td><td>−8.6</td><td>96.1</td><td>4.91</td><td>63.3</td><td>1.07</td><td>0.184</td><td>16.7</td><td>92.7</td><td>14.1</td></tr>
-        <tr class="ours"><th scope="row">Ours (<span class="arc-word">ARC</span>)</th><td>0.971</td><td>11.06</td><td>−9.1</td><td>99.2</td><td>3.42</td><td>59.4</td><td>1.70</td><td>0.426</td><td>11.5</td><td>99.5</td><td>63.0</td></tr>
-        </tbody></table></div><div class="table-notes"><p><strong>Local withdrawal.</strong> Hold is mean withdrawal distance over 0.2–1 s. The compensation score <span data-tex="C"></span> is positive when the policy opposes the reflex and negative when it reinforces it.</p><p><strong>Contact.</strong> Surv. is survival rate. <span data-tex="J_{100\mathrm{ms}}"></span> integrates normal contact force over the first 100 ms. Rehit measures recontact with the same obstacle after separation.</p><p><strong>Global recovery.</strong> Root displacement at 3 s, mean velocity along the commanded recovery direction over 0.2–1 s, direction error, and fractions reaching 0.5 m / 1.5 m at 3 s.</p><p><strong>Explicit reference.</strong> Replaces the AMP reward with direct tracking of a retreat motion.</p></div></div>
+        <tr class="ours"><th scope="row">Ours (<span class="arc-word">ARC</span>)</th><td class="best">0.971</td><td class="best">11.06</td><td class="best">−9.1</td><td class="best">99.2</td><td class="best">3.42</td><td>59.4</td><td class="best">1.70</td><td>0.426</td><td class="best">11.5</td><td>99.5</td><td class="best">63.0</td></tr>
+        </tbody></table></div><div class="table-notes"><p><strong>Local withdrawal.</strong> Hold is mean withdrawal distance over 0.2–1 s. The compensation score <span data-tex="C"></span> is positive when the policy opposes the reflex and negative when it reinforces it.</p><p><strong>Contact.</strong> Surv. is survival rate. <span data-tex="J_{100\mathrm{ms}}"></span> integrates normal contact force over the first 100 ms. Rehit measures recontact with the same obstacle after separation.</p><p><strong>Global recovery.</strong> Root displacement at 3 s, mean velocity along the commanded recovery direction over 0.2–1 s, direction error, and fractions reaching 0.5 m / 1.5 m at 3 s.</p><p><strong>Explicit reference.</strong> Replaces the AMP reward with direct tracking of a retreat motion.</p><p><strong>w/o transparency.</strong> Some recovery metrics look slightly better, but the policy cancels the reflex (<span data-tex="C"></span> = 29.7, Hold 6.74 cm): recovery without withdrawal is a false success.</p></div></div>
       </details>
     </section>
 

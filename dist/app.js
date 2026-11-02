@@ -1,5 +1,19 @@
 (() => {
   const config = window.REFLEXARC || {};
+  const renderByline = (selector, entries, markerFirst = false) => {
+    const target = document.querySelector(selector);
+    if (!target) return;
+    (entries || []).forEach(entry => {
+      const item = document.createElement('span');
+      const name = document.createTextNode(entry.name);
+      const marker = document.createElement('sup');
+      marker.textContent = entry.marker || '';
+      item.append(...(markerFirst ? [marker, name] : [name, marker]));
+      target.append(item);
+    });
+  };
+  renderByline('#hero-authors', config.authors);
+  renderByline('#hero-affiliations', config.affiliations, true);
   document.querySelectorAll('[data-resource]').forEach(resource => {
     const url = config[resource.dataset.resource];
     if (!url || !/^https:\/\//i.test(url)) return;
@@ -15,11 +29,11 @@
     resource.replaceWith(link);
   });
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const films = {demo:'ReflexArc — Full film', comparison:'Hardware comparison', ablation:'Component ablations'};
+  const films = {demo:'ReflexArc — Video', comparison:'Hardware comparison', ablation:'Component ablations'};
   const demos = {
     wholebody: ['One touch. A coordinated retreat.', 'Contact at the hands, arms, torso, and knee triggers local withdrawal and a coordinated retreat away from the collision.'],
-    tracking: ['Keep the motion. Respond to contact.', 'Motion tracking meets thrown objects and repeated strikes. ReflexArc sustains the reflex as the policy carries the movement forward.'],
-    teleop: ['Reflex protection for teleoperation.', 'Environmental collision: tactile withdrawal reduces collisions with the surroundings. Boxing: reflex protection reduces operator injury risk. Both demonstrations integrate the reflex into a general motion tracker.'],
+    tracking: ['Keep the motion. Respond to contact.', 'Motion tracking meets thrown objects and repeated strikes. The policy sustains the reflex and carries the movement forward.'],
+    teleop: ['Reflex protection for teleoperation.', 'Environmental collision: tactile withdrawal reduces collisions with the surroundings. Boxing: reflex protection reduces operator injury risk. Both add the reflex to a general motion tracker without retraining.'],
     traversal: ['Feel the obstacle. Take the next step.', 'Foot tactile sensing guides step-over and stair-climbing. Reflex-informed adaptation turns the initial withdrawal into forward progress.']
   };
   document.querySelectorAll('[data-tex]').forEach(el => {
