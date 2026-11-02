@@ -2,7 +2,7 @@
 
 ReflexArc 论文主页，包含实验视频、方法介绍、消融结果与浏览器内交互 policy。
 
-这个仓库用于独立维护网站。当前没有启用 GitHub Pages，也没有自动发布工作流。
+这个仓库用于独立维护网站。已添加手动发布工作流 `.github/workflows/pages.yml`，没有自动发布。
 
 ## 本地预览
 
@@ -27,18 +27,18 @@ dist/                         可直接部署的静态网站
 docs/GITHUB.md                创建私有仓库、上传、日常更新
 docs/GITHUB_PAGES.md          以后发布网站的操作步骤
 docs/MAINTENANCE.md           内容和 Demo 更新说明
-deploy/github-pages.yml.example  尚未启用的手动发布模板
+deploy/github-pages.yml.example  手动发布模板（已启用为 .github/workflows/pages.yml）
 ```
 
 网站为静态 HTML/CSS/JS，无需安装 npm 依赖或运行构建。`reflex_demo/` 已包含作者提供的生产构建，修改其运行逻辑时应在原 Demo 工程中重新构建。
 
 ## 先保存到私有仓库
 
-按 [GitHub 私有仓库步骤](docs/GITHUB.md) 创建空的 **Private** 仓库，再推送本地 `main` 分支。当前仓库没有 `.github/workflows/`，推送代码不会触发本项目的 Pages 发布。
+按 [GitHub 私有仓库步骤](docs/GITHUB.md) 创建空的 **Private** 仓库，再推送本地 `main` 分支。`.github/workflows/pages.yml` 只能手动运行，推送代码不会触发本项目的 Pages 发布。
 
 ## 以后发布
 
-准备对外发布时，再按 [GitHub Pages 指南](docs/GITHUB_PAGES.md) 启用模板。发布内容仅来自 `dist/`，文档和本地部署说明不在网站发布目录中。
+发布工作流已启用，按 [GitHub Pages 指南](docs/GITHUB_PAGES.md) 从第 2 步继续。发布内容仅来自 `dist/`，文档和本地部署说明不在网站发布目录中。
 
 ## 当前待填写
 
