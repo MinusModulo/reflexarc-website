@@ -118,6 +118,10 @@
     event.currentTarget.setAttribute('aria-pressed', String(zoomed));
   });
   document.querySelector('#paper-open')?.addEventListener('click', () => {
+    if (config.arxiv && /^https:\/\//i.test(config.arxiv)) {
+      window.open(config.arxiv, '_blank', 'noopener,noreferrer');
+      return;
+    }
     suspendVideos();
     showPaperPage(paperPage);
     document.querySelector('#paper-dialog').showModal();

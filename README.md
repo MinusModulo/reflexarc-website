@@ -42,7 +42,8 @@ deploy/github-pages.yml.example  手动发布模板（已启用为 .github/workf
 
 ## 当前待填写
 
-- `dist/config.js` 中的 `arxiv` 和 `github`：顶部资源入口仍为 Coming soon。私有的网站仓库与论文 Code 链接分别管理。
+- arXiv 已配置为 https://arxiv.org/abs/2611.04424，首屏 Paper 和摘要下方 Read the paper 均打开该页面。
+- `dist/config.js` 中的 `github`：论文 Code 入口仍为 Coming soon。网站仓库与论文 Code 链接分别管理。
 - `dist/config.js` 中的 `bibtex`：第 07 节的引用信息。
 
 保留了随字体及 KaTeX 分发的许可文件。

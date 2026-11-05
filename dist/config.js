@@ -13,7 +13,7 @@ window.REFLEXARC = {
     {name: 'Galbot', marker: '2'},
     {name: 'Peking University', marker: '3'}
   ],
-  arxiv: null,
+  arxiv: 'https://arxiv.org/abs/2611.04424',
   github: null,
   bibtex: null, // Complete author-provided BibTeX string; rendered in section 07.
   playground: {
