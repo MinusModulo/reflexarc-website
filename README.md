@@ -40,10 +40,10 @@ deploy/github-pages.yml.example  手动发布模板（已启用为 .github/workf
 
 发布工作流已启用，按 [GitHub Pages 指南](docs/GITHUB_PAGES.md) 从第 2 步继续。发布内容仅来自 `dist/`，文档和本地部署说明不在网站发布目录中。
 
-## 当前待填写
+## 论文资源与引用
 
 - arXiv 已配置为 https://arxiv.org/abs/2611.04424，首屏 Paper 和摘要下方 Read the paper 均打开该页面。
 - `dist/config.js` 中的 `github`：论文 Code 入口仍为 Coming soon。网站仓库与论文 Code 链接分别管理。
-- `dist/config.js` 中的 `bibtex`：第 07 节的引用信息。
+- `dist/config.js` 中的 `bibtex` 已填入作者提供的 arXiv 引用，显示在第 07 节 Citation。
 
 保留了随字体及 KaTeX 分发的许可文件。
